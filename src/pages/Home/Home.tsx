@@ -3,6 +3,7 @@ import logo from '../../assets/img/logo.png';
 import styles from './Home.module.scss';
 import { getCurrentWindow } from '@tauri-apps/api/window';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 
 const Home = () => {
@@ -14,7 +15,9 @@ const Home = () => {
             const currentWindow = getCurrentWindow();
             await currentWindow.close();
         } catch (e) {
-            setError(e);
+            toast.error(`Erro: ${e}`, {
+                // position: "top-l"
+              });
         }
       };
 
