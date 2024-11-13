@@ -12,9 +12,10 @@
   "app": {
     "windows": [
       {
-        "title": "projeto-teste",
-        "width": 800,
-        "height": 600
+        "title": "Mercadinho Preço Bom",
+        "width": 500,
+        "height": 700,
+        "resizable": false
       }
     ],
     "security": {

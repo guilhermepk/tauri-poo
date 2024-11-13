@@ -22,15 +22,33 @@
 
     .items_list {
         border: 1px solid black;
-        padding: 1rem;
         border-radius: 10px;
+        width: 90%;
+        max-height: 20rem;
+        overflow-y: auto;
+        text-wrap: pretty;
+        text-align: center;
+
+        .not_selected {
+            &:nth-child(even) {
+                background-color: #cfcfcf;
+            }
+        }
+
+        .selected {
+            &:nth-child(even) {
+                background-color: rgb(50, 50, 50);
+            }
+
+            background-color: black;
+            color: white;
+        }
 
         .item {
-            margin: 0.5rem;
-
             &:hover {
                 cursor: pointer;
                 background-color: gray;
+                color: white
             }
         }
     }

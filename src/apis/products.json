@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Arroz Urbano 500g",
+        "price": 4.45
+    },
+    {
+        "id": 2,
+        "name": "Arroz Tio João 1Kg",
+        "price": 7.39
+    },
+    {
+        "id": 3,
+        "name": "Macarrão Spaghetti Rummo 500g",
+        "price": 12.98
+    },
+    {
+        "id": 4,
+        "name": "Pringles",
+        "price": 8.99
+    }
+]
