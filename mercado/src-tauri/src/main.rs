@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    projeto_teste_lib::run()
+    mercado_lib::run()
 }
