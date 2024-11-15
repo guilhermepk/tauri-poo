@@ -6,6 +6,9 @@ const host = process.env.TAURI_DEV_HOST;
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
+  build: {
+    outDir: 'server/frontend-dist'
+  },
   plugins: [react()],
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
@@ -28,5 +31,12 @@ export default defineConfig(async () => ({
       // 3. tell vite to ignore watching `src-tauri`
       ignored: ["**/src-tauri/**"],
     },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: (path => path.replace(/^\/api/, ''))
+      }
+    }
   },
 }));

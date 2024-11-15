@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import BackArrow from '../../components/BackArrow/BackArrow';
 import styles from './CashRegister.module.scss';
-import { getProducts } from '../../apis/fake-backend.api';
+// import { getProducts } from '../../apis/fake-backend.api';
 
 const CashRegister = () => {
     const [items, setItems] = useState<any[]>([]);
-    const [products, setProducts] = useState<any>([]);
+    // const [products, setProducts] = useState<any>([]);
     const [selectedItemsIndexes, setSelectedItemsIndexes] = useState<number[]>([]);
 
     useEffect(() => {
-        async function executeGetProducts(){ setProducts(await getProducts()); }
+        // async function executeGetProducts(){ setProducts(await getProducts()); }
 
-        executeGetProducts();
+        // executeGetProducts();
     }, []);
 
     return (

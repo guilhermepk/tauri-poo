@@ -5,9 +5,9 @@
   "identifier": "com.projeto-teste.app",
   "build": {
     "beforeDevCommand": "npm run dev",
-    "devUrl": "http://localhost:1420",
     "beforeBuildCommand": "npm run build",
-    "frontendDist": "../dist"
+    "devUrl": "http://localhost:3000",
+    "frontendDist": "../server/frontend-dist"
   },
   "app": {
     "windows": [
@@ -19,7 +19,7 @@
       }
     ],
     "security": {
-      "csp": null
+      "csp": "default-src self http://127.0.0.1:3000"
     }
   },
   "bundle": {
