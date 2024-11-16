@@ -1,18 +1,39 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import BackArrow from '../../components/BackArrow/BackArrow';
 import styles from './CashRegister.module.scss';
-import { getProducts } from '../../apis/fake-backend.api';
+import { Product } from '../../apis/backend/types/product.type';
+import { getProductById } from '../../apis/backend/backend.api';
+import { toast } from 'react-toastify';
 
 const CashRegister = () => {
     const [items, setItems] = useState<any[]>([]);
-    const [products, setProducts] = useState<any>([]);
     const [selectedItemsIndexes, setSelectedItemsIndexes] = useState<number[]>([]);
+    const [product, setProduct] = useState<Product | null>(null);
+    const [productNotFoundMessage, setProductNotFoundMessage] = useState<string | null>(null);
 
-    useEffect(() => {
-        async function executeGetProducts(){ setProducts(await getProducts()); }
+    async function handleProductIdChange(id: number){
+        if (id) {
+            try {
+                const product: Product = await getProductById(id);
+                setProduct(product);
+            } catch (error: any) {
+                if (error.response?.data?.message) {
+                    if (error.status == 404) {
+                        setProductNotFoundMessage(error.response.data.message);
+                    } else {
+                        toast.error(`Erro: ${error.response.data.message}`);
+                    }
+                }else {
+                    toast.error(`Erro: ${error.message}`);
+                }
 
-        executeGetProducts();
-    }, []);
+                setProduct(null);
+            }
+        } else {
+            setProduct(null);
+            setProductNotFoundMessage(null);
+        }
+    }
 
     return (
         <div className={styles.CashRegister}>
@@ -23,7 +44,13 @@ const CashRegister = () => {
             <div className={styles.input_container}>
                 <div className={styles.input_box}>
                     <label> Código </label>
-                    <input type="number"/>
+                    <input
+                        className={styles.id}
+                        type="number"
+                        min="1"
+                        step="1"
+                        onChange={(event) => handleProductIdChange(Number(event.target.value))}
+                    />
                 </div>
 
                 <div className={styles.input_box}>
@@ -31,6 +58,13 @@ const CashRegister = () => {
                     <input type="number"/>
                 </div>
             </div>
+
+            {productNotFoundMessage && (
+                <p> {productNotFoundMessage} </p>
+            )}
+            {product && !productNotFoundMessage && (
+                <p> {product.name} - R${String(Number(product.price).toFixed(2)).replace('.', ',')} - {product.description ?? 'Sem descrição'} </p>
+            )}
 
             <button onClick={() => {
                 setItems(prev => {

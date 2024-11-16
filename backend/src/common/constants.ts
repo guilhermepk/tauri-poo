@@ -1,0 +1,2 @@
+export const PRODUCT_PRICE_PRECISION = 6;
+export const PRODUCT_PRICE_SCALE = 2;

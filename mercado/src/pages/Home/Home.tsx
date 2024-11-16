@@ -7,15 +7,14 @@ import { toast } from 'react-toastify';
 
 
 const Home = () => {
-    const [error, setError] = useState<any>(null);
     const navigate = useNavigate();
 
     async function handleClose (){
         try {
             const currentWindow = getCurrentWindow();
             await currentWindow.close();
-        } catch (e) {
-            toast.error(`Erro: ${e}`, {
+        } catch (error) {
+            toast.error(`Erro: ${error}`, {
                 // position: "top-l"
               });
         }
@@ -31,10 +30,6 @@ const Home = () => {
             <button onClick={() => navigate('price-check')}> Verificador de preço </button>
             <button onClick={() => navigate('about')}> Sobre o sistema </button>
             <button onClick={() => handleClose()}> Sair </button>
-
-            {error && (
-                <p> Erro: {error} </p>
-            )}
         </div>
     );
 }

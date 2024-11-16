@@ -1,14 +1,20 @@
-import { TemplateEntity } from "src/common/models/classes/template.entity";
-import { Column, Entity } from "typeorm";
+import { PRODUCT_PRICE_PRECISION, PRODUCT_PRICE_SCALE } from "src/common/constants";
+import { EntityTemplate } from "src/common/models/classes/entity.template";
+import { OrdersEntity } from "src/orders/models/entities/orders.entity";
+import { Column, Entity, OneToMany } from "typeorm";
 
 @Entity({ name: `products` })
-export class ProductsEntity extends TemplateEntity {
+export class ProductsEntity extends EntityTemplate {
     @Column({ type: `varchar`, nullable: false })
     name: string;
 
     @Column({ type: `varchar`, nullable: true })
     description?: string;
 
-    @Column({ type: 'decimal', nullable: false, precision: 2 })
+    @Column({ type: 'numeric', nullable: false, precision: PRODUCT_PRICE_PRECISION, scale: PRODUCT_PRICE_SCALE })
     price: number;
+
+    // --{ RELAÇÕES }--
+    @OneToMany(() => OrdersEntity, order => order.product)
+    orders: OrdersEntity[];
 }

@@ -15,6 +15,9 @@ import { ProductsTypeOrmRepository } from "./products.repository";
     providers: [
         ProductsService,
         ProductsTypeOrmRepository
+    ],
+    exports: [
+        ProductsService
     ]
 })
 export class ProductsModule {}
