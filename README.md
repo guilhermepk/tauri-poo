@@ -10,6 +10,7 @@ O programa executável de Windows deve ser instalado no computador e se comunica
 
 ## Dependências
 
+- Windows `10` ou acima;
 * Node ``20.16.0`` ou acima;
 * npm ``10.6.0`` ou acima;
 - Postgres `15` ou acima;
