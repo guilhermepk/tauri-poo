@@ -62,7 +62,7 @@ Você pode querer rodar o projeto em `Produção` ou em `Ambiente de Desenvolvim
 - Acesse a pasta `installers` e execute qualquer um dos instaladores Siga os passos do instalador.
 - Caso o instalador não abra o programa, <b>execute o programa instalado</b>.
 
-Caso queria você mesmo gerar o instalador, siga os passos abaixo:
+##### Caso queria você mesmo gerar o instalador, siga os passos abaixo:
 - Acesse a pasta `mercado` via terminal e rode o comando abaixo, ele instalará as dependências, compilará o Frontend e compilará o projeto para binário:
     ```bash
     npm run tauri:build
