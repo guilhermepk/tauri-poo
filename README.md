@@ -1,6 +1,6 @@
 # Mercadinho Preço Bom
 
-Programa de caixa de mercado simples feito com Tauri, React, Vite, SASS e NestJS, em Typescript, TSX (HTML5) e CSS3, para nota avaliativa. O sistema foi feito com o intutio do estudo de desenvolvimento de `sistemas desktop` e `programação orientada a objetos`.
+Programa de caixa de mercado simples feito com Tauri, React, Vite, SASS e NestJS, em Typescript, TSX (HTML5) e CSS3, para nota avaliativa. O sistema foi feito com o intuito do estudo de desenvolvimento de `sistemas desktop` e `programação orientada a objetos`.
 
 O ``Vite`` compila os arquivos do Frontend para uma pasta estática `.dist`. O `Tauri` então compila essa pasta e gera um `installer`, que quando for executado instalará o arquivo binário `.exe` do sistema.
 
