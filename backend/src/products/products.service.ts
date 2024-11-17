@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
-import { ProductsTypeOrmRepository } from "./products.repository";
 import { tryCatch } from "src/common/functions/try-catch.function";
+import { ProductsTypeOrmRepository } from "./repository/products.repository";
 
 @Injectable()
 export class ProductsService {

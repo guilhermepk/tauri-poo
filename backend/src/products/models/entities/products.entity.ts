@@ -5,6 +5,13 @@ import { Column, Entity, OneToMany } from "typeorm";
 
 @Entity({ name: `products` })
 export class ProductsEntity extends EntityTemplate {
+    constructor(name: string, price: number, description?: string){
+        super();
+        this.name = name;
+        this.price = price;
+        this.description = description ?? null;
+    }
+
     @Column({ type: `varchar`, nullable: false })
     name: string;
 

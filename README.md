@@ -8,6 +8,8 @@ O `NestJS` instancia os seus módulos e suas dependências, fazendo a comunicaç
 
 O programa executável de Windows deve ser instalado no computador e se comunica com o servidor Backend externo. Pensando na forma como um caixa de verdade funcionaria, vários programas instalados em computadores diferentes se comunicariam com um servidor hospedado remotamente.
 
+> O Backend verifica a quantidade de produtos cadastrados e caso não haja nenhum, ele cria 4 produtos pré-definidos através de um `seeder`.
+
 ## Dependências
 
 - Windows `10` ou acima;
