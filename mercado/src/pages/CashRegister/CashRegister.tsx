@@ -76,6 +76,20 @@ const CashRegister = () => {
         }
     }
 
+    function handleItemClick(index: number) {
+        setSelectedItemsIndexes((prev) =>
+            prev.includes(index)
+                ? prev.filter((item) => item !== index)
+                : [...prev, index]
+        );
+    }
+
+    function handleRemoveItems(){
+        setItems(prev => prev.filter((_, index) => {
+            return !selectedItemsIndexes.includes(index);
+        }));
+    }    
+
     return (
         <div className={styles.CashRegister}>
             <BackArrow/>
@@ -114,7 +128,7 @@ const CashRegister = () => {
                 <p> {product.name} - R${String(Number(product.price).toFixed(2)).replace('.', ',')} - {product.description ?? 'Sem descrição'} </p>
             )}
 
-            {product && (
+            {product && quantity > 0 &&  (
                 <button onClick={() => {
                     setItems(prev => {
                         return [
@@ -145,7 +159,7 @@ const CashRegister = () => {
                                 <div
                                     className={`${styles.item} ${selectedItemsIndexes.includes(index) ? styles.selected : styles.not_selected}`}
                                     key={index}
-                                    onClick={() => setSelectedItemsIndexes(prev => [...prev, index])}
+                                    onClick={() => handleItemClick(index)}
                                 >
                                     <p>
                                         {
@@ -166,7 +180,7 @@ const CashRegister = () => {
                     </div>
 
                     {selectedItemsIndexes && selectedItemsIndexes.length > 0 && (
-                        <button onClick={() => setSelectedItemsIndexes([])}>
+                        <button onClick={() => handleRemoveItems()}>
                             Remover da lista
                         </button>
                     )}
