@@ -79,7 +79,8 @@ Você pode querer rodar o projeto em `Produção` ou em `Ambiente de Desenvolvim
     npm run start:dev
     ```
 #### Frontend e Programa simulado
-- Acesse a pasta `mercado` via terminal e rode o comando abaixo para iniciar em desenvolvimento. Ele rodará um programa simulando o que será gerado em produção e rodará também em uma porta que pode ser acessada pelo navegador.
+- Acesse a pasta `mercado` via terminal e rode `npm i` para instalar as dependências.
+- Rode o comando abaixo para iniciar em desenvolvimento, ele rodará um programa simulando o que será gerado em produção e rodará também em uma porta que pode ser acessada pelo navegador:
     ```bash
     npm run tauri dev
     ```
