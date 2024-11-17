@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/logo.png';
 import styles from './Home.module.scss';
 import { getCurrentWindow } from '@tauri-apps/api/window';
-import { useState } from 'react';
 import { toast } from 'react-toastify';
 
 
