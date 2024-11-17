@@ -15,6 +15,5 @@ export class CreatePurchaseDto {
 
     @IsNotEmpty()
     @IsNumber()
-    @IsPositive()
     changeAmount: number;
 }
