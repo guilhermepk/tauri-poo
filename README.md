@@ -12,18 +12,20 @@ O programa executável de Windows deve ser instalado no computador e se comunica
 
 ## Dependências
 
+> As dependências do Turi não são dependências para o ``ambiente de produção``, onde o programa é executado como um `.exe`. Somente necessárias para o `ambiente de desenvolvimento`.
+
 - Windows `10` ou acima;
-* Node ``20.16.0`` ou acima;
-* npm ``10.6.0`` ou acima;
-- Postgres `15` ou acima;
-* Rust;
+- [Node](https://nodejs.org/en/download/package-manager) ``20.16.0`` ou acima;
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) ``10.6.0`` ou acima;
+- [Postgres](https://www.postgresql.org/download/) `15` ou acima;
+- [Pré-requisitos do Tauri](https://v1.tauri.app/v1/guides/getting-started/prerequisites), incluindo Rust;
 * As demais dependências serão instaladas pelo `npm`.
 
 ## Configurações
 
 ### 1. Banco de Dados
 - Instale o ``Postgres`` na versão 15 ou acima;
-- Instale o `pgAdmin4` ou o gerenciador de sua preferência;
+- Instale o [`pgAdmin4`](https://www.pgadmin.org/download/pgadmin-4-windows/) ou o gerenciador de sua preferência;
 - Conecte o `pgAdmin4` ao `servidor postgres` instalado;
 - Crie um banco de dados com o nome ``mercadinho_preco_bom``.
 
